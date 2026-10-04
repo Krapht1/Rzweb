@@ -70,7 +70,7 @@ p { margin: 0; }
   background: var(--black); color: var(--white);
   border-bottom: 1px solid var(--line-dark);
 }
-.nav__brand img { width: 40px; height: 40px; }
+.nav__brand img { width: 44px; height: 44px; }
 .nav__links { display: flex; gap: 24px; margin-left: auto; }
 .nav__links a {
   text-decoration: none; font-size: 14px; font-weight: 500; opacity: .75;
@@ -228,6 +228,7 @@ p { margin: 0; }
   display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;
   padding: 56px var(--gutter) 96px; background: var(--black); color: var(--white);
 }
+.footer__logo { width: clamp(180px, 40vw, 240px); height: auto; margin-bottom: 8px; }
 .footer__small { font-size: 13px; color: var(--gray); }
 
 /* ---------- WhatsApp flotante ---------- */

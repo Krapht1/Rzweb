@@ -12,7 +12,9 @@ RZWeb/
 ├── css/styles.css    # Estilos (paleta blanco y negro)
 ├── js/config.js      # ← TODO el contenido editable
 ├── js/main.js        # Lógica: render, WhatsApp, mapa, abierto/cerrado
-└── assets/logo.svg   # Logo provisorio (reemplazar por el real)
+└── assets/
+    ├── logo-badge.svg  # Insignia circular (nav y favicon)
+    └── logo-footer.png # Logo "— RZ —" en blanco (footer)
 ```
 
 ## Editar contenido
