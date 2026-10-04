@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RZ — Abierto hasta las 3 AM</title>
+  <meta name="description" content="RZ: regalería, bebidas, almacén y todo lo que necesitás. Abierto hasta las 3 de la mañana.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a href="#inicio" class="nav__brand" aria-label="RZ, inicio">
+      <img src="assets/logo.svg" alt="" width="40" height="40">
+    </a>
+    <nav class="nav__links" aria-label="Secciones">
+      <a href="#productos">Productos</a>
+      <a href="#promos">Promos</a>
+      <a href="#ubicacion">Horarios</a>
+    </nav>
+    <span class="status" data-status>
+      <span class="status__dot"></span><span data-status-text>…</span>
+    </span>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <div class="hero__inner">
+        <p class="eyebrow">Regalería · Bebidas · Almacén</p>
+        <h1 class="hero__title">RZ</h1>
+        <!-- Espacio para el lema o el nombre completo del local -->
+        <h2 class="hero__tagline">Tu lema o nombre completo acá</h2>
+        <p class="hero__lead">Todo lo que necesitás, cuando lo necesitás. Desde un regalo de último momento hasta las bebidas para la previa.</p>
+        <div class="hero__actions">
+          <a class="btn btn--light" href="#" data-whatsapp>Pedí por WhatsApp</a>
+          <a class="btn btn--ghost" href="#ubicacion">Cómo llegar</a>
+        </div>
+      </div>
+      <div class="hero__clock" aria-hidden="true">
+        <span class="hero__clock-label">Cerramos a las</span>
+        <span class="hero__clock-time">03:00</span>
+        <span class="hero__clock-label">AM</span>
+      </div>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Abierto hasta las 3 AM</span><span>✦</span>
+        <span>Regalería</span><span>✦</span>
+        <span>Bebidas frías</span><span>✦</span>
+        <span>Almacén</span><span>✦</span>
+        <span>Golosinas</span><span>✦</span>
+        <span>Abierto hasta las 3 AM</span><span>✦</span>
+        <span>Regalería</span><span>✦</span>
+        <span>Bebidas frías</span><span>✦</span>
+        <span>Almacén</span><span>✦</span>
+        <span>Golosinas</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- ===== PRODUCTOS ===== -->
+    <section class="section" id="productos">
+      <header class="section__head">
+        <p class="eyebrow">01 — Productos</p>
+        <h2 class="section__title">De todo, en un solo lugar</h2>
+      </header>
+      <div class="grid grid--cats" data-categories></div>
+    </section>
+
+    <!-- ===== PROMOS ===== -->
+    <section class="section section--dark" id="promos">
+      <header class="section__head">
+        <p class="eyebrow">02 — Promociones</p>
+        <h2 class="section__title">Promos de la semana</h2>
+      </header>
+      <div class="grid grid--promos" data-promos></div>
+      <p class="fineprint">Promociones válidas hasta agotar stock. Consultá disponibilidad por WhatsApp.</p>
+    </section>
+
+    <!-- ===== UBICACIÓN / HORARIOS ===== -->
+    <section class="section" id="ubicacion">
+      <header class="section__head">
+        <p class="eyebrow">03 — Visitanos</p>
+        <h2 class="section__title">Horarios y ubicación</h2>
+      </header>
+      <div class="visit">
+        <div class="visit__info">
+          <table class="hours" data-hours>
+            <caption class="sr-only">Horarios de atención</caption>
+          </table>
+          <address class="visit__address">
+            <strong>Dirección</strong>
+            <span data-address>Calle Ejemplo 123, Ciudad</span>
+          </address>
+          <a class="btn btn--dark" href="#" data-maps target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </div>
+        <div class="visit__map">
+          <iframe data-map-embed title="Mapa de ubicación de RZ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo.svg" alt="RZ" width="56" height="56">
+    <p>Abierto todos los días hasta las 3 AM.</p>
+    <p class="footer__small">© <span data-year></span> RZ</p>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="wa-float" href="#" data-whatsapp aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-5.9 4.9-10.6 11-10.6s11 4.8 11 10.6-4.9 10.9-10.9 10.9zm6-7.9c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
