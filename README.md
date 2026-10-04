@@ -14,7 +14,8 @@ RZWeb/
 ├── js/main.js        # Lógica: render, WhatsApp, mapa, abierto/cerrado
 └── assets/
     ├── logo-badge.svg  # Insignia circular (nav y favicon)
-    └── logo-footer.png # Logo "— RZ —" en blanco (footer)
+    ├── logo-footer.png # Logo "— RZ —" en blanco (footer)
+    └── img/            # Fotos de categorías y promos (placeholders)
 ```
 
 ## Editar contenido
@@ -22,9 +23,9 @@ RZWeb/
 Todo se cambia en `js/config.js`:
 
 - `whatsapp`: número con código de país, sin `+` ni espacios (ej. `5493871234567`).
-- `direccion`: se usa para el texto, el mapa embebido y el botón de Google Maps.
+- `coordenadas`: lat/lng para el mapa y el botón de Google Maps. `direccion` es solo el texto visible.
 - `horarios`: apertura y cierre por día. Si el cierre es después de medianoche (ej. `03:00`), el indicador "Abierto ahora" lo calcula bien.
-- `categorias`: título, texto e ícono. Se puede poner `imagen: "assets/foto.jpg"` para usar una foto.
+- `categorias` y `promos`: título, texto e imagen. Para cambiar una foto, reemplazá el archivo en `assets/img/` con el mismo nombre (bebidas, kiosco, regaleria, almacen, promo-1..3 `.jpg`). Formato sugerido: 800×600 categorías, 800×500 promos.
 - `promos`: con `activa: false` se oculta una promo sin borrarla.
 
 El lema o nombre completo del local va en el `<h2 class="hero__tagline">` de `index.html`.

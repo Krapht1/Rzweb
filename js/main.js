@@ -30,12 +30,13 @@
 
   /* ---------- Dirección y mapa ---------- */
   var dir = C.direccion || "";
+  var q = C.coordenadas ? (C.coordenadas.lat + "," + C.coordenadas.lng) : dir;
   $all("[data-address]").forEach(function (el) { el.textContent = dir; });
   $all("[data-maps]").forEach(function (a) {
-    a.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(dir);
+    a.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
   });
   $all("[data-map-embed]").forEach(function (f) {
-    f.src = "https://www.google.com/maps?q=" + encodeURIComponent(dir) + "&output=embed";
+    f.src = "https://www.google.com/maps?q=" + encodeURIComponent(q) + "&z=16&output=embed";
   });
 
   /* ---------- Categorías ---------- */
@@ -43,9 +44,9 @@
   if (catBox) {
     catBox.innerHTML = (C.categorias || []).map(function (c, i) {
       var media = c.imagen
-        ? '<img src="' + esc(c.imagen) + '" alt="" loading="lazy">'
+        ? '<img src="' + esc(c.imagen) + '" alt="' + esc(c.titulo) + '" loading="lazy">'
         : icon(c.icono);
-      return '<article class="cat">' +
+      return '<article class="cat' + (c.imagen ? ' cat--photo' : '') + '">' +
                '<span class="cat__num">' + String(i + 1).padStart(2, "0") + '</span>' +
                '<div class="cat__media">' + media + '</div>' +
                '<h3 class="cat__title">' + esc(c.titulo) + '</h3>' +
@@ -59,7 +60,10 @@
   if (promoBox) {
     var activas = (C.promos || []).filter(function (p) { return p.activa !== false; });
     promoBox.innerHTML = activas.length ? activas.map(function (p) {
-      return '<article class="promo">' +
+      var img = p.imagen
+        ? '<div class="promo__media"><img src="' + esc(p.imagen) + '" alt="' + esc(p.titulo) + '" loading="lazy"></div>'
+        : "";
+      return '<article class="promo">' + img +
                '<span class="promo__tag">' + esc(p.etiqueta) + '</span>' +
                '<h3 class="promo__title">' + esc(p.titulo) + '</h3>' +
                '<p class="promo__text">' + esc(p.detalle) + '</p>' +
